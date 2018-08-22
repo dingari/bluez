@@ -3290,3 +3290,11 @@ int bt_gatt_client_get_security(struct bt_gatt_client *client)
 
 	return bt_att_get_security(client->att, NULL);
 }
+
+struct bt_att *bt_gatt_client_get_att(struct bt_gatt_client *client)
+{
+	if (!client)
+		return -1;
+
+	return client->att;
+}

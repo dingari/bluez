@@ -196,6 +196,10 @@ static void handle_midi_io(struct midi *midi, uint16_t value_handle)
 	                               midi,
 	                               NULL))
 		DBG("MIDI I/O: Failed to send request to read initial value");
+
+	uint16_t mtu = 128;
+	if (!bt_att_set_mtu(bt_gatt_client_get_att(midi->client), mtu))
+		DBG("Failed to set mtu");
 }
 
 static void handle_characteristic(struct gatt_db_attribute *attr,

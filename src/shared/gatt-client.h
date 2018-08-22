@@ -136,3 +136,5 @@ bool bt_gatt_client_unregister_notify(struct bt_gatt_client *client,
 
 bool bt_gatt_client_set_security(struct bt_gatt_client *client, int level);
 int bt_gatt_client_get_security(struct bt_gatt_client *client);
+
+struct bt_att *bt_gatt_client_get_att(struct bt_gatt_client *client);
